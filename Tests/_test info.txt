@@ -1,0 +1,3 @@
+Temporary tests for HSV value calibration and vision tracking made using a drawing using a green highlighter that represents the targets.
+
+Commands based on perspective of camera on the robot. The "Angle to turn" values are outdated (testing done with laptop webcam), but testing has been successful with the Microsoft Lifecam HD 3000 (specs included in the code).
