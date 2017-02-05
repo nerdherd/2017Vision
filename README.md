@@ -42,8 +42,8 @@ Camera (Microsoft Lifecam HD-3000 for our purposes)
 
 Testing has been done with 
 
- - [example images](https://usfirst.collab.net/sf/frs/do/viewRelease/projects.wpilib/frs.sample_programs.2017_c_java_vision_sample?_message=1483834990405) provided by WPILIB (2017 images included in this project under [SampleImages](https://github.com/tedklin/NerdyVision/tree/master/sample_images))
+ - [example images](https://usfirst.collab.net/sf/frs/do/viewRelease/projects.wpilib/frs.sample_programs.2017_c_java_vision_sample?_message=1483834990405) provided by WPILIB (2017 images included in this project under [SampleImages](https://github.com/nerdherd/2017Vision/tree/master/SampleImages))
 
-    - Tests for all example images in the [SampleImages](https://github.com/tedklin/NerdyVision/tree/master/sample_images/LED_Boiler) folder successful except for images 7 and 32
+    - Tests for all example images in the [SampleImages](https://github.com/nerdherd/2017Vision/tree/master/SampleImages) folder successful except for images 7 and 32
 
  - custom made high goal / boiler / gear peg with green highlighter / marker
