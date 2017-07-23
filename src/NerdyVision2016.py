@@ -18,26 +18,27 @@ if not os.path.isdir("/tmp/stream"):
 #cap = CameraStream(src=-1).start()
 cap = cv2.VideoCapture(0)
 
-os.system("v4l2-ctl -d /dev/video0 "
-          "-c brightness=30 "
-          "-c contrast=10 "
-          "-c saturation=100 "
-          "-c white_balance_temperature_auto=0 "
-          "-c power_line_frequency=2 "
-          "-c white_balance_temperature=4500 "
-          "-c sharpness=25 "
-          "-c backlight_compensation=0 "
-          "-c exposure_auto=1 "
-          "-c exposure_absolute=5 "
-          "-c pan_absolute=0 "
-          "-c tilt_absolute=0 "
-          "-c zoom_absolute=0")
-
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, NerdyConstants.FRAME_X)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, NerdyConstants.FRAME_Y)
 
 
 def main():
+
+    # brightness adjusted, used to be 30, now is 70
+    os.system("v4l2-ctl -d /dev/video0 "
+              "-c brightness=70 "
+              "-c contrast=10 "
+              "-c saturation=100 "
+              "-c white_balance_temperature_auto=0 "
+              "-c power_line_frequency=2 "
+              "-c white_balance_temperature=4500 "
+              "-c sharpness=25 "
+              "-c backlight_compensation=0 "
+              "-c exposure_auto=1 "
+              "-c exposure_absolute=5 "
+              "-c pan_absolute=0 "
+              "-c tilt_absolute=0 "
+              "-c zoom_absolute=0")
 
     NetworkTable.setIPAddress("roboRIO-687-FRC.local")
     NetworkTable.setClientMode()
@@ -90,8 +91,9 @@ def main():
                         delta_time = processed_time - capture_time
                         print("PROCESSED_TIME: " + str(delta_time))
 
-        NerdyFunctions.draw_static(res)
-        cv2.imshow("NerdyVision", res)
+        # Has to be commented out because ssh doesn't allow opencv windows open
+        # NerdyFunctions.draw_static(res)
+        # cv2.imshow("NerdyVision", res)
         try:
             table.putBoolean('IS_ALIGNED', aligned)
             if previous_angle_to_turn != angle_to_turn:
